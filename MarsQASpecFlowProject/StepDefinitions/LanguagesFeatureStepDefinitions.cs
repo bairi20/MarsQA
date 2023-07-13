@@ -25,8 +25,8 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [Given(@"I open local host succesfully")]
         public void GivenIOpenLocalHostSuccesfully()
         {
-           // driver = new ChromeDriver();
-         //page.launch(driver);
+            // driver = new ChromeDriver();
+            //page.launch(driver);
         }
 
         [When(@"I click on Sign in link")]
@@ -35,31 +35,13 @@ namespace MarsQASpecFlowProject.StepDefinitions
             driver.FindElement(By.XPath("//div[@id='home']/div/div/div/div/a")).Click();
         }
 
-        /* [When(@"I provided valid Username ""([^""]*)"" and Password ""([^""]*)""")]
-         public void WhenIProvidedValidUsernameAndPassword(string uname, string pwd)
-         {
-             loginpage.loginUser(driver, uname, pwd);
-         }*/
-
-        /* [When(@"I provided valid Username ""([^""]*)""")]
-           public void WhenIProvidedValidUsername(string uname)
-           {
-
-            loginpage.loginUser(driver, uname);
-        }
-
-           [When(@"I provided valid Password ""([^""]*)""")]
-           public void WhenIProvidedValidPassword(string pwd)
-           {
-            loginpage.loginPwd(driver, pwd);
-        }*/
-
+       
         [When(@"I provided Username ""([^""]*)"" in text field")]
         public void WhenIProvidedUsernameInTextField(string uname)
         {
-            if (uname != null) { 
+            if (uname != null) {
                 loginpage.loginUser(driver, uname);
-        }
+            }
         }
 
         [When(@"I provided Password ""([^""]*)"" in text field")]
@@ -71,7 +53,7 @@ namespace MarsQASpecFlowProject.StepDefinitions
             }
         }
 
-        
+
         [When(@"I tick the remember Me\? checkbox")]
         public void WhenITickTheRememberMeCheckbox()
         {
@@ -116,7 +98,7 @@ namespace MarsQASpecFlowProject.StepDefinitions
                 Console.WriteLine("Username and password are not null");
             }
 
-            
+
         }
         [Then(@"I logged in successfully")]
         public void ThenILoggedInSuccessfully()
@@ -182,7 +164,7 @@ namespace MarsQASpecFlowProject.StepDefinitions
             Thread.Sleep(300);
             IWebElement addedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been added to your languages')]"));
             Assert.IsTrue(addedMsg.Text.Contains(lang + " has been added to your languages"));
-           }
+        }
 
 
         [When(@"I click on Sign Out button")]
@@ -225,7 +207,7 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [Then(@"I can verify the error messages ""([^""]*)"" for language ""([^""]*)""  and level ""([^""]*)""")]
         public void ThenICanVerifyTheErrorMessagesForLanguageAndLevel(string errormsg, string langone, string levelone)
         {
-            if (langone == "")
+            if ((langone == "" )|| (levelone == ""))
             {
                 Thread.Sleep(1000);
                 String message = driver.FindElement(By.XPath("//div[contains(text(),'Please enter language and level')]")).Text;
@@ -248,13 +230,13 @@ namespace MarsQASpecFlowProject.StepDefinitions
             
             languagePage.deleteLanguage(driver, lang);
         }
-
-        [Then(@"The deleted ""([^""]*)"" message should be displayed")]
-        public void ThenTheDeletedMessageShouldBeDisplayed(string lang)
+        
+        [Then(@"The deleted ""([^""]*)"" message ""([^""]*)"" should be displayed")]
+        public void ThenTheDeletedMessageShouldBeDisplayed(string lang, string errormsg)
         {
             Thread.Sleep(300);
             IWebElement deletedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been deleted from your languages')]"));
-            Assert.IsTrue(deletedMsg.Text.Contains(lang + " has been deleted from your languages"));
+            Assert.IsTrue(deletedMsg.Text.Contains(errormsg));
         }
 
     }

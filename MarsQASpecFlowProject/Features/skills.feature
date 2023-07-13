@@ -12,7 +12,7 @@ Scenario Outline: Add skill and choose level single record with valid details
    Examples:  
 	| skills		| levelvalue   | 
 	| Manual testing| Beginner     | 
-	| Java			| Intermediate | 
+	| Java8			| Intermediate | 
 	| Selenium      | Expert       | 
 
 
@@ -47,7 +47,37 @@ Scenario Outline: Add skill and choose level single record with valid details
 	Examples: 
 	| skills    | levelvalue | skillsone | levelvalueone |
 	| Specflow  | Beginner   | Cucumber  | Expert        |
-
+	
 
 
 	
+	Scenario Outline: Add skill and choose level record with invalid/blank details
+	Given I successfullly logged into the Mars_qa Project
+	When I click on skill tab
+	And I click on skills Add new button 
+	And I enter the add skill "<skills>" in text field
+	And I select a Choose skill level "<levelvalue>" from drop down list
+	And I click on skills add button
+    Then I can verify the error messages "<error message>" for skill "<skills>" and level "<levelvalue>" 
+
+	Examples: 
+	| skills   | levelvalue | error message                           |
+	|          | Beginner   | Please enter skill and experience level |
+	| Python   |	        | Please enter skill and experience level |
+
+	
+	#Delete previously added languages before the run
+   	Scenario Outline: Delete skill and choose level record 
+	Given I successfullly logged into the Mars_qa Project
+	When I click on skill tab
+	And I click on skills Add new button 
+	And I enter the add skill "<skills>" in text field
+	And I select a Choose skill level "<levelvalue>" from drop down list
+	And I click on skills add button
+    Then I can see the skills "<skills>" added message
+   When I want to delete existing skills "<skills>" 
+   Then The deleted  skills "<skills>" message "<error message>" should be displayed
+
+	Examples: 
+	| skills | levelvalue | error message          |
+	| Ruby   | Expert     | Ruby has been deleted  |

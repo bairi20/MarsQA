@@ -199,7 +199,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("languages", languages);
             argumentsOfScenario.Add("levelvalue", levelvalue);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add language and choose level single record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+#line 37
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -219,25 +219,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 39
+#line 38
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 40
+#line 39
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 40
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 41
  testRunner.When(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 42
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 43
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 45
+#line 44
    testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -257,7 +257,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("duplicatelevel", duplicatelevel);
             argumentsOfScenario.Add("error message", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add duplicate language and choose level single record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 52
+#line 51
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -277,31 +277,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 53
+#line 52
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 54
+#line 53
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 55
+#line 54
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
+#line 55
  testRunner.When(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 57
+#line 56
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 58
+#line 57
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 59
+#line 58
    testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 60
+#line 59
    testRunner.When(string.Format("I want to add duplicate \"{0}\" and \"{1}\"", duplicatelanguage, duplicatelevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 60
    testRunner.Then(string.Format("I can verify the error message \"{0}\" for duplicate \"{1}\" and \"{2}\"", errorMessage, duplicatelanguage, duplicatelevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -327,7 +327,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("languagesone", languagesone);
             argumentsOfScenario.Add("levelvalueone", levelvalueone);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit language and choose level record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 70
+#line 69
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -347,31 +347,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 71
+#line 70
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 72
+#line 71
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 73
+#line 72
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 74
+#line 73
  testRunner.And(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 75
+#line 74
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 76
+#line 75
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 77
+#line 76
    testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 78
+#line 77
    testRunner.When(string.Format("I want to update \"{0}\" with \"{1}\" and \"{2}\" languge and level", languages, languagesone, levelvalueone), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 78
    testRunner.Then(string.Format("The updated \"{0}\" and \"{1}\" message should be displayed", languagesone, levelvalueone), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -379,10 +379,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Edit language and choose level record with invalid/blank details")]
+        [NUnit.Framework.DescriptionAttribute("Add language and choose level record with invalid/blank details")]
         [NUnit.Framework.CategoryAttribute("BB")]
-        [NUnit.Framework.TestCaseAttribute("Italian", "Basic", "", "Fluent", "Please enter language and level", null)]
-        public virtual void EditLanguageAndChooseLevelRecordWithInvalidBlankDetails(string languages, string levelvalue, string languagesone, string levelvalueone, string errorMessage, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("", "Basic", "Please enter language and level", null)]
+        [NUnit.Framework.TestCaseAttribute("Chinese", "", "Please enter language and level", null)]
+        public virtual void AddLanguageAndChooseLevelRecordWithInvalidBlankDetails(string languages, string levelvalue, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "BB"};
@@ -394,11 +395,9 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("languages", languages);
             argumentsOfScenario.Add("levelvalue", levelvalue);
-            argumentsOfScenario.Add("languagesone", languagesone);
-            argumentsOfScenario.Add("levelvalueone", levelvalueone);
             argumentsOfScenario.Add("error message", errorMessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit language and choose level record with invalid/blank details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 88
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add language and choose level record with invalid/blank details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 87
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -418,32 +417,26 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 89
+#line 88
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 90
+#line 89
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 91
+#line 90
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 92
+#line 91
  testRunner.And(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 93
+#line 92
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 94
+#line 93
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 95
-   testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 96
-   testRunner.When(string.Format("I want to update \"{0}\" with invalid/blank \"{1}\" and \"{2}\" languge and level", languages, languagesone, levelvalueone), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 97
-   testRunner.Then(string.Format("I can verify the error messages \"{0}\" for language \"{1}\"  and level \"{2}\"", errorMessage, languagesone, levelvalueone), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 94
+   testRunner.Then(string.Format("I can verify the error messages \"{0}\" for language \"{1}\"  and level \"{2}\"", errorMessage, languages, levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -451,23 +444,17 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Delete language and choose level record with valid details")]
-        [NUnit.Framework.CategoryAttribute("BB")]
-        [NUnit.Framework.TestCaseAttribute("German", "Basic", null)]
-        public virtual void DeleteLanguageAndChooseLevelRecordWithValidDetails(string languages, string levelvalue, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("German", "Basic", "German has been deleted from your languages", null)]
+        public virtual void DeleteLanguageAndChooseLevelRecordWithValidDetails(string languages, string levelvalue, string errorMessagge, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "BB"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("languages", languages);
             argumentsOfScenario.Add("levelvalue", levelvalue);
+            argumentsOfScenario.Add("error messagge", errorMessagge);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete language and choose level record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 106
- this.ScenarioInitialize(scenarioInfo);
+#line 104
+    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -486,32 +473,32 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 107
+#line 105
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 108
+#line 106
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 109
+#line 107
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 110
+#line 108
  testRunner.And(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 111
+#line 109
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 112
+#line 110
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 113
+#line 111
    testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 114
+#line 112
    testRunner.When(string.Format("I want to delete existing \"{0}\"", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 115
-   testRunner.Then(string.Format("The deleted \"{0}\" message should be displayed", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 113
+   testRunner.Then(string.Format("The deleted \"{0}\" message \"{1}\" should be displayed", languages, errorMessagge), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -520,9 +507,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add language and choose level record with valid details")]
         [NUnit.Framework.TestCaseAttribute("English", "Basic", null)]
-        [NUnit.Framework.TestCaseAttribute("French", "Fluent", null)]
-        [NUnit.Framework.TestCaseAttribute("Spanish", "Native/Bilingual", null)]
-        [NUnit.Framework.TestCaseAttribute("Hindi", "Native/Bilingual", null)]
         public virtual void AddLanguageAndChooseLevelRecordWithValidDetails(string languages, string levelvalue, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -530,7 +514,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("languages", languages);
             argumentsOfScenario.Add("levelvalue", levelvalue);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add language and choose level record with valid details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 122
+#line 120
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -550,25 +534,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 123
+#line 121
  testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 124
+#line 122
  testRunner.When("I click on language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 125
+#line 123
  testRunner.And("I click on Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 126
+#line 124
  testRunner.And(string.Format("I enter the add language \"{0}\" in text field", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 127
+#line 125
  testRunner.And(string.Format("I select a Choose language level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 128
+#line 126
  testRunner.And("I click on add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 129
+#line 127
    testRunner.Then(string.Format("I can see the \"{0}\" added message", languages), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

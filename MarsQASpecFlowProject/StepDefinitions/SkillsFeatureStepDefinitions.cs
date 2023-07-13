@@ -92,7 +92,40 @@ namespace MarsQASpecFlowProject.StepDefinitions
             Thread.Sleep(500);
             IWebElement updatedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been updated to your skills')]"));
             Assert.IsTrue(updatedMsg.Text.Contains(skillone + " has been updated to your skills"));
-        
+
+        }
+            [When(@"I want to update ""([^""]*)"" with invalid/blank ""([^""]*)"" and ""([^""]*)"" skill and level")]
+            public void WhenIWantToUpdateWithInvalidBlankAndskillAndLevel(string skill, string empty, string levelone)
+            {
+                skillPageObj.updateSkills(driver, skill, empty, levelone);
+            }
+
+        [Then(@"I can verify the error messages ""([^""]*)"" for skill ""([^""]*)"" and level ""([^""]*)""")]
+        public void ThenICanVerifyTheErrorMessagesForSkillAndLevel(string errormsg, string skillone, string levelone)
+        {
+            if((skillone == "") || (levelone == ""))
+            {
+                Thread.Sleep(1000);
+                String message = driver.FindElement(By.XPath("//div[contains(text(), 'Please enter skill and experience level')]")).Text;
+                Assert.AreEqual(errormsg, message);
+
+
+            }
+        }
+
+        [When(@"I want to delete existing skills ""([^""]*)""")]
+        public void WhenIWantToDeleteExistingSkills(string skills)
+        {
+
+            skillPageObj.deleteSkills(driver, skills);
+        }
+
+        [Then(@"The deleted  skills ""([^""]*)"" message ""([^""]*)"" should be displayed")]
+        public void ThenTheDeletedSkillsMessageShouldBeDisplayed(string skill, string errormsg)
+        {
+            Thread.Sleep(300);
+            IWebElement deletedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been deleted')]"));
+            Assert.IsTrue(deletedMsg.Text.Contains(errormsg));
         }
 
     }

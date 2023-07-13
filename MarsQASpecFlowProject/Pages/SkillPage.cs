@@ -101,5 +101,27 @@ namespace MarsQASpecFlowProject.Pages
                 }
             }
         }
-     }
+
+        public void deleteSkills(IWebDriver driver, String skill)
+        {
+            Thread.Sleep(2000);
+            // Find all rows in the table
+            IReadOnlyCollection<IWebElement> rows = driver.FindElements(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr"));
+
+            foreach (var row in rows)
+            {
+                // Get the text of the first column (skill column) in the row
+                IWebElement skillElement = row.FindElement(By.XPath("./td[1]"));
+
+                string skillText = skillElement.Text;
+                Thread.Sleep(2000);
+                // Check if the skill matches the provided text
+                if (skillText.Equals(skill))
+                {
+                    // Find and click the edit icon in the row
+                    row.FindElement(By.XPath("./td[3]/span[2]/i")).Click();
+                 }
+            }
+        }
+    }
 }

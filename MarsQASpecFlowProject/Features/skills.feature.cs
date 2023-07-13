@@ -76,7 +76,7 @@ namespace MarsQASpecFlowProject.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add skill and choose level single record with valid details")]
         [NUnit.Framework.TestCaseAttribute("Manual testing", "Beginner", null)]
-        [NUnit.Framework.TestCaseAttribute("Java", "Intermediate", null)]
+        [NUnit.Framework.TestCaseAttribute("Java8", "Intermediate", null)]
         [NUnit.Framework.TestCaseAttribute("Selenium", "Expert", null)]
         public virtual void AddSkillAndChooseLevelSingleRecordWithValidDetails(string skills, string levelvalue, string[] exampleTags)
         {
@@ -259,6 +259,125 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 45
     testRunner.Then(string.Format("The updated skills \"{0}\" and \"{1}\" message should be displayed", skillsone, levelvalueone), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add skill and choose level record with invalid/blank details")]
+        [NUnit.Framework.TestCaseAttribute("", "Beginner", "Please enter skill and experience level", null)]
+        [NUnit.Framework.TestCaseAttribute("Python", "", "Please enter skill and experience level", null)]
+        public virtual void AddSkillAndChooseLevelRecordWithInvalidBlankDetails(string skills, string levelvalue, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("skills", skills);
+            argumentsOfScenario.Add("levelvalue", levelvalue);
+            argumentsOfScenario.Add("error message", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add skill and choose level record with invalid/blank details", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 54
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 55
+ testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 56
+ testRunner.When("I click on skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 57
+ testRunner.And("I click on skills Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
+ testRunner.And(string.Format("I enter the add skill \"{0}\" in text field", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 59
+ testRunner.And(string.Format("I select a Choose skill level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 60
+ testRunner.And("I click on skills add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 61
+    testRunner.Then(string.Format("I can verify the error messages \"{0}\" for skill \"{1}\" and level \"{2}\"", errorMessage, skills, levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delete skill and choose level record")]
+        [NUnit.Framework.TestCaseAttribute("Ruby", "Expert", "Ruby has been deleted", null)]
+        public virtual void DeleteSkillAndChooseLevelRecord(string skills, string levelvalue, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("skills", skills);
+            argumentsOfScenario.Add("levelvalue", levelvalue);
+            argumentsOfScenario.Add("error message", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete skill and choose level record", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 70
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 71
+ testRunner.Given("I successfullly logged into the Mars_qa Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 72
+ testRunner.When("I click on skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.And("I click on skills Add new button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 74
+ testRunner.And(string.Format("I enter the add skill \"{0}\" in text field", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 75
+ testRunner.And(string.Format("I select a Choose skill level \"{0}\" from drop down list", levelvalue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+ testRunner.And("I click on skills add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+    testRunner.Then(string.Format("I can see the skills \"{0}\" added message", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 78
+   testRunner.When(string.Format("I want to delete existing skills \"{0}\"", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 79
+   testRunner.Then(string.Format("The deleted  skills \"{0}\" message \"{1}\" should be displayed", skills, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

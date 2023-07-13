@@ -58,12 +58,7 @@ namespace MarsQASpecFlowProject.Pages
             driver.FindElement(By.XPath("//input[@name='name']")).SendKeys(lang);
 
         }
-        /*public void fillTextFieldUpdate(IWebDriver driver, String langone)
-        {
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//input[@name='name']")).SendKeys(langone);
-
-        }*/
+        
 
         public void selectValue(IWebDriver driver, String dvalue)
         {
