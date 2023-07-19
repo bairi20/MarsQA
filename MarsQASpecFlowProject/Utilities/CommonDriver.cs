@@ -14,17 +14,19 @@ namespace MarsQASpecFlowProject.Utilities
         public static IWebDriver driver;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-       /* public void Initialize()
+        public void Initialize()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-        }*/
+            driver.Navigate().GoToUrl("http://localhost:5000/");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(40);
+        }
 
        
-       /* public void Close()
+        public void Close()
         {
             driver.Close();
-        }*/
+        }
     }
 }
 

@@ -8,54 +8,51 @@ using TechTalk.SpecFlow;
 namespace MarsQASpecFlowProject.StepDefinitions
 {
     [Binding]
-    public class SkillsFeatureStepDefinitions 
+    public class SkillsFeatureStepDefinitions : CommonDriver
     {
-        Pages.SkillPage skillPageObj = new Pages.SkillPage();
-        private new readonly IWebDriver driver;
-
-        public SkillsFeatureStepDefinitions(IWebDriver driver)
+        private SkillPage skillPageObj;
+        private LoginPage loginpage;
+      
+        public SkillsFeatureStepDefinitions()
         {
-            this.driver = driver;
+            skillPageObj = new SkillPage();
+            loginpage = new LoginPage();
         }
-
-
 
         [When(@"I click on skill tab")]
         public void WhenIClickOnSkillTab()
         {
             driver.Navigate().Refresh();
-            Thread.Sleep(2000);
-            skillPageObj.skillsTab(driver);
+            skillPageObj.skillsTab();
         }
 
         [When(@"I click on skills Add new button")]
         public void WhenIClickOnSkillsAddNewButton()
         {
-            skillPageObj.skillAddNewBtn(driver);
+            skillPageObj.skillAddNewBtn();
         }
 
         [When(@"I enter the add skill ""([^""]*)"" in text field")]
         public void WhenIEnterTheAddSkillInTextField(string skills)
         {
-            skillPageObj.fillSkillTextField(driver, skills);
+            skillPageObj.fillSkillTextField(skills);
         }
 
         [When(@"I select a Choose skill level ""([^""]*)"" from drop down list")]
         public void WhenISelectAChooseSkillLevelFromDropDownList(string skillLevel)
         {
-            skillPageObj.selectSkillLevel(driver, skillLevel);
+            skillPageObj.selectSkillLevel(skillLevel);
         }
 
         [When(@"I click on skills add button")]
         public void WhenIClickOnSkillsAddButton()
         {
-            skillPageObj.skillAddBtn(driver);
+            skillPageObj.skillAddBtn();
         }
 
         [Then(@"I can see the skills ""([^""]*)"" added message")]
         public void ThenICanSeeTheSkillsAddedMessage(string skillvalue)
         {
-            Thread.Sleep(300);
             IWebElement skillAddedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been added to your skills')]"));
             Assert.IsTrue(skillAddedMsg.Text.Contains(skillvalue + " has been added to your skills"));
         }
@@ -63,7 +60,6 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [When(@"I want to add duplicate skills ""([^""]*)"" and ""([^""]*)""")]
         public void WhenIWantToAddDuplicateSkillsAnd(string dupskills, string dupskillLevel)
         {
-            Thread.Sleep(2000);
             WhenIClickOnSkillsAddNewButton();
             WhenIEnterTheAddSkillInTextField(dupskills);
             WhenISelectAChooseSkillLevelFromDropDownList (dupskillLevel);
@@ -74,7 +70,6 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [Then(@"I can verify the  error message ""([^""]*)"" for duplicate ""([^""]*)"" and ""([^""]*)""")]
         public void ThenICanVerifyTheErrorMessageForDuplicateAnd(string errormsg, string dupskills, string dupskillLevel)
         {
-            Thread.Sleep(1000);
             String message = driver.FindElement(By.XPath("//div[contains(text(),'This skill is already exist in your skill list.')]")).Text;
             Assert.AreEqual(errormsg, message);
         }
@@ -82,14 +77,12 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [When(@"I want to update ""([^""]*)"" with ""([^""]*)"" and ""([^""]*)"" skill and level")]
         public void WhenIWantToUpdateWithAndSkillAndLevel(string skill, string skillone, string skilllevel)
         {
-            Thread.Sleep(2000);
-            skillPageObj.updateSkills(driver, skill, skillone, skilllevel);
+            skillPageObj.updateSkills(skill, skillone, skilllevel);
         }
 
         [Then(@"The updated skills ""([^""]*)"" and ""([^""]*)"" message should be displayed")]
         public void ThenTheUpdatedSkillsAndMessageShouldBeDisplayed(string skillone, string skilllevel)
         {
-            Thread.Sleep(500);
             IWebElement updatedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been updated to your skills')]"));
             Assert.IsTrue(updatedMsg.Text.Contains(skillone + " has been updated to your skills"));
 
@@ -97,7 +90,7 @@ namespace MarsQASpecFlowProject.StepDefinitions
             [When(@"I want to update ""([^""]*)"" with invalid/blank ""([^""]*)"" and ""([^""]*)"" skill and level")]
             public void WhenIWantToUpdateWithInvalidBlankAndskillAndLevel(string skill, string empty, string levelone)
             {
-                skillPageObj.updateSkills(driver, skill, empty, levelone);
+                skillPageObj.updateSkills(skill, empty, levelone);
             }
 
         [Then(@"I can verify the error messages ""([^""]*)"" for skill ""([^""]*)"" and level ""([^""]*)""")]
@@ -105,7 +98,6 @@ namespace MarsQASpecFlowProject.StepDefinitions
         {
             if((skillone == "") || (levelone == ""))
             {
-                Thread.Sleep(1000);
                 String message = driver.FindElement(By.XPath("//div[contains(text(), 'Please enter skill and experience level')]")).Text;
                 Assert.AreEqual(errormsg, message);
 
@@ -116,14 +108,12 @@ namespace MarsQASpecFlowProject.StepDefinitions
         [When(@"I want to delete existing skills ""([^""]*)""")]
         public void WhenIWantToDeleteExistingSkills(string skills)
         {
-
-            skillPageObj.deleteSkills(driver, skills);
+            skillPageObj.deleteSkills(skills);
         }
 
         [Then(@"The deleted  skills ""([^""]*)"" message ""([^""]*)"" should be displayed")]
         public void ThenTheDeletedSkillsMessageShouldBeDisplayed(string skill, string errormsg)
         {
-            Thread.Sleep(300);
             IWebElement deletedMsg = driver.FindElement(By.XPath("//div[contains(text(),'has been deleted')]"));
             Assert.IsTrue(deletedMsg.Text.Contains(errormsg));
         }

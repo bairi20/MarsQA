@@ -1,4 +1,5 @@
 ﻿using BoDi;
+using MarsQASpecFlowProject.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
@@ -6,10 +7,12 @@ using TechTalk.SpecFlow;
 namespace MarsQASpecFlowProject.Hooks
 {
     [Binding]
-    public sealed class Hooks
+    public sealed class Hooks : CommonDriver
     {
-        private readonly IObjectContainer _container;
-        private ChromeDriver driver;
+        /*private readonly IObjectContainer _container;
+        public static IWebDriver driver;
+
+        public object TimeUnit { get; private set; }
 
         public Hooks(IObjectContainer container)
         {
@@ -27,13 +30,12 @@ namespace MarsQASpecFlowProject.Hooks
         {
             driver = new ChromeDriver();
             //launch turnup portal
-          //  driver.Navigate().GoToUrl("http://localhost:5000/");
-            //Initialize();
             driver.Manage().Window.Maximize();
             //launch turnup portal
-            driver.Navigate().GoToUrl("http://localhost:5000/");
-            Thread.Sleep(2000);
+           // driver.Navigate().GoToUrl("http://localhost:5000/");
             _container.RegisterInstanceAs<IWebDriver>(driver);
+          
+
         }
 
         [AfterScenario]
@@ -45,6 +47,18 @@ namespace MarsQASpecFlowProject.Hooks
             {
                 driver.Quit();
             }
+        }*/
+        [BeforeScenario]
+        public void BeforeScenarioWithTag()
+        {
+            Initialize();
+        }
+
+
+        [AfterScenario]
+        public void AfterSCenario()
+        {
+            Close();
         }
     }
 }

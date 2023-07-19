@@ -11,13 +11,11 @@ namespace MarsQASpecFlowProject.Pages
 {
     public class SkillPage : CommonDriver
     {
-
-        public void skillsTab(IWebDriver driver)
+        public void skillsTab()
         {
             try
             {
-                Thread.Sleep(1000);
-                driver.FindElement(By.XPath("//a[normalize-space()='Skills']")).Click();
+               driver.FindElement(By.XPath("//a[normalize-space()='Skills']")).Click();
             }
             catch (Exception e)
             {
@@ -26,24 +24,21 @@ namespace MarsQASpecFlowProject.Pages
 
         }
 
-        public void skillAddNewBtn(IWebDriver driver)
+        public void skillAddNewBtn()
         {
-                Thread.Sleep(1000);  
-                driver.FindElement(By.XPath("//div[@class='ui teal button']")).Click();
+            driver.FindElement(By.XPath("//div[@class='ui teal button']")).Click();
         }
 
-        public void fillSkillTextField(IWebDriver driver, String skillvalue)
+        public void fillSkillTextField(String skillvalue)
         {
-            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//input[@name='name']")).SendKeys(skillvalue);
 
         }
 
-        public void selectSkillLevel(IWebDriver driver, String skillLevel)
+        public void selectSkillLevel(String skillLevel)
         {
             try
             {
-                Thread.Sleep(1000);
                 IWebElement skilldropdown = driver.FindElement(By.Name("level"));
                 SelectElement SelectSkillLevel = new SelectElement(skilldropdown);
                 SelectSkillLevel.SelectByValue(skillLevel);
@@ -54,29 +49,26 @@ namespace MarsQASpecFlowProject.Pages
             }
         }
 
-        public void skillAddBtn(IWebDriver driver)
+        public void skillAddBtn()
         {
             try
             {
                 driver.FindElement(By.XPath("//input[@value='Add']")).Click();
-                Thread.Sleep(1000);
-            }
+                          }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
         }
 
-        public void skillUpdateBtn(IWebDriver driver)
+        public void skillUpdateBtn()
         {
-           // Thread.Sleep(2000);
-           // driver.FindElement(By.XPath("//div[@class='ui teal button']")).Click();
+           
             driver.FindElement(By.XPath("//input[@value='Update']")).Click();
         }
 
-        public void updateSkills(IWebDriver driver, String skill, String skillone, String skilllevel)
+        public void updateSkills(String skill, String skillone, String skilllevel)
         {
-            Thread.Sleep(2000);
             // Find all rows in the table
             IReadOnlyCollection<IWebElement> rows = driver.FindElements(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr"));
           
@@ -86,25 +78,21 @@ namespace MarsQASpecFlowProject.Pages
                 IWebElement skillElement = row.FindElement(By.XPath("./td[1]"));
 
                 string skillText = skillElement.Text;
-                Thread.Sleep(2000);
                 // Check if the skill matches the provided text
                 if (skillText.Equals(skill))
                 {
                     // Find and click the edit icon in the row
                     row.FindElement(By.XPath("./td[3]/span[1]/i")).Click();
-                    Thread.Sleep(1000);
                     driver.FindElement(By.XPath("//input[@name='name']")).Clear();
-                    fillSkillTextField(driver, skillone);
-                    selectSkillLevel(driver, skilllevel);
-                    Thread.Sleep(3000);
-                    skillUpdateBtn(driver);
+                    fillSkillTextField(skillone);
+                    selectSkillLevel(skilllevel);
+                    skillUpdateBtn();
                 }
             }
         }
 
-        public void deleteSkills(IWebDriver driver, String skill)
+        public void deleteSkills(String skill)
         {
-            Thread.Sleep(2000);
             // Find all rows in the table
             IReadOnlyCollection<IWebElement> rows = driver.FindElements(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr"));
 
@@ -114,8 +102,7 @@ namespace MarsQASpecFlowProject.Pages
                 IWebElement skillElement = row.FindElement(By.XPath("./td[1]"));
 
                 string skillText = skillElement.Text;
-                Thread.Sleep(2000);
-                // Check if the skill matches the provided text
+                 // Check if the skill matches the provided text
                 if (skillText.Equals(skill))
                 {
                     // Find and click the edit icon in the row
@@ -123,5 +110,6 @@ namespace MarsQASpecFlowProject.Pages
                  }
             }
         }
+
     }
 }

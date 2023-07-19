@@ -12,7 +12,7 @@ namespace MarsQASpecFlowProject.Pages
     public class LoginPage : CommonDriver
     {
 
-        public void loginUser(IWebDriver driver, String uname)
+        public void loginUser(String uname)
         {
             try
 
@@ -30,7 +30,7 @@ namespace MarsQASpecFlowProject.Pages
 
          }
 
-        public void loginPwd(IWebDriver driver, String pwd)
+        public void loginPwd(String pwd)
         {
             try
 
@@ -50,12 +50,12 @@ namespace MarsQASpecFlowProject.Pages
         }
 
 
-        public void rememberChk(IWebDriver driver)
+        public void rememberChk()
         {
             driver.FindElement(By.XPath("//input[@type='checkbox']")).Click();
         }
         
-        public void loginbtn(IWebDriver driver)
+        public void loginbtn()
         {
 
             try
